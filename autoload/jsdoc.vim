@@ -137,7 +137,7 @@ function! jsdoc#insert()
         if l:argDescription != ''
           let l:argDescription = ' ' . l:argDescription
         endif
-        call add(l:lines, l:space . ' * @param {' . l:argType . '} ' . l:arg . l:argDescription)
+        call add(l:lines, l:space . ' * @param {' . l:argType . '} ' . l:arg . ' - ' . l:argDescription)
       else
         call add(l:lines, l:space . ' * @param ' . l:arg)
       endif
@@ -154,12 +154,12 @@ function! jsdoc#insert()
         if l:returnDescription != ''
           let l:returnDescription = ' ' . l:returnDescription
         endif
-        call add(l:lines, l:space . ' * @return {' . l:returnType . '}' . l:returnDescription)
+        call add(l:lines, l:space . ' * @returns {' . l:returnType . '}' . l:returnDescription)
       else
-        call add(l:lines, l:space . ' * @return {undefined}')
+        call add(l:lines, l:space . ' * @returns {undefined}')
       endif
     else
-      call add(l:lines, l:space . ' * @return {undefined}')
+      call add(l:lines, l:space . ' * @returns {undefined}')
     endif
   endif
   call add(l:lines, l:space . ' */')
